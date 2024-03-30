@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import CameraScreen from "./components/cameraScreen";
+import SignUpScreen from "./components/signUpScreen";
+import SignInScreen from "./components/signInScreen";
+import ImageScreen from "./components/imageScreen";
+import ImageClassifier from "./components/objectDetectionScreen";
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen
+          name="CameraScreen"
+          component={CameraScreen}
+          options={{ title: "Camera" }}
+        />
+        <Stack.Screen
+          name="ImageScreen"
+          component={ImageScreen}
+          options={{ title: "Image" }}
+        />
+        <Stack.Screen
+          name="ImageClassifier"
+          component={ImageClassifier}
+          options={{ title: "Object Detection Classifier" }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
