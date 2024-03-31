@@ -9,7 +9,7 @@ Using MobileNet (Tensorflow AI Model) for Object Detection from Captured Images 
 In **firebase.js** file add your firebase configuration object. The steps to obtain your object are:
 1. Go to https://firebase.google.com/ and select “Get started” 
 2. Create a new project ( a three-step process for creating project)
-3. Select **"Add Firebase to your app"** by clicking eith Android/iOS/Web/Unity/flutter
+3. Select **"Add Firebase to your app"** by clicking either Android/iOS/Web/Unity/flutter
 4. Add your project name and get creditional
 
 ## Method to run this project
