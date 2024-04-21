@@ -6,6 +6,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as MediaLibrary from "expo-media-library";
 import { auth } from "../firebase";
 import { stylesHome, stylesCamera } from "./style";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 const CameraScreen = () => {
   const navigation = useNavigation();
@@ -116,7 +117,7 @@ const CameraScreen = () => {
   };
 
   const handleClassifier = () => {
-    navigation.navigate("ImageClassifier");
+    navigation.navigate("FaceDetection");
   };
 
   if (
@@ -135,8 +136,7 @@ const CameraScreen = () => {
   }
 
   return (
-    <View style={stylesHome.container}>
-      <Text style={stylesHome.title}>Welcome to Camera App!</Text>
+    <View style={{ flex: 1 }}>
       <View style={stylesCamera.cameraContainer}>
         {isFocused && (
           <Camera
@@ -147,18 +147,18 @@ const CameraScreen = () => {
           />
         )}
       </View>
-      <View style={{ flexDirection: "row" }}>
-        <Pressable onPress={takePicture} style={stylesHome.button}>
-          <Text style={stylesHome.buttonText}>Capture</Text>
+      <View style={stylesCamera.buttonContainer}>
+        <Pressable onPress={takePicture}>
+          <Icon name="camera" size={35} color="orange" />
         </Pressable>
-        <Pressable onPress={pickImage} style={stylesHome.button}>
-          <Text style={stylesHome.buttonText}>Gallery</Text>
+        <Pressable onPress={pickImage}>
+          <Icon name="image" size={35} color="orange" />
         </Pressable>
-        <Pressable onPress={handleSignOut} style={stylesHome.button}>
-          <Text style={stylesHome.buttonText}>Sign Out</Text>
+        <Pressable onPress={handleSignOut}>
+          <Icon name="logout" size={35} color="orange" />
         </Pressable>
-        <Pressable onPress={handleClassifier} style={stylesHome.button}>
-          <Text style={stylesHome.buttonText}>Classifier</Text>
+        <Pressable onPress={handleClassifier}>
+          <Icon name="face-recognition" size={35} color="orange" />
         </Pressable>
       </View>
     </View>

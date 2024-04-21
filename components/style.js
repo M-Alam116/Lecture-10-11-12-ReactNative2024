@@ -38,44 +38,51 @@ const stylesCamera = StyleSheet.create({
     flex: 1,
     aspectRatio: 1,
   },
-  button: {
-    flex: 0.1,
-    padding: 10,
-    alignSelf: "flex-end",
-    alignItems: "center",
+  buttonContainer: {
+    flexDirection: "row",
+    height: 70,
+    backgroundColor: "black",
+    gap: 10,
+    justifyContent: "space-around",
+    alignItems: 'center',
   },
 });
 
-const stylesSignIn = StyleSheet.create({
+const stylesSignInAndSignUp = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
+    color: "black",
+    opacity: 0.6,
   },
   input: {
     width: "100%",
-    height: 40,
+    height: 55,
     borderColor: "gray",
-    borderWidth: 1,
-    borderRadius: 5,
+    borderWidth: 1.5,
+    borderRadius: 7,
     marginBottom: 20,
     paddingHorizontal: 10,
   },
   button: {
-    backgroundColor: "blue",
+    backgroundColor: "orange",
     paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
+    paddingVertical: 20,
+    borderRadius: 7,
+    width: "100%",
   },
   buttonText: {
     color: "white",
     fontWeight: "bold",
+    textAlign: "center",
   },
   error: {
     color: "red",
@@ -83,52 +90,17 @@ const stylesSignIn = StyleSheet.create({
   },
   footer: {
     marginTop: 20,
-  },
-  link: {
-    color: "blue",
-  },
-});
-
-const stylesSignUp = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
+    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    gap: 5,
   },
-  title: {
-    fontSize: 24,
+  text: {
     fontWeight: "bold",
-    marginBottom: 20,
-  },
-  input: {
-    width: "100%",
-    height: 40,
-    borderColor: "gray",
-    borderWidth: 1,
-    borderRadius: 5,
-    marginBottom: 20,
-    paddingHorizontal: 10,
-  },
-  button: {
-    backgroundColor: "blue",
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 5,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "bold",
-  },
-  error: {
-    color: "red",
-    marginBottom: 20,
-  },
-  footer: {
-    marginTop: 20,
+    opacity: 0.7,
   },
   link: {
     color: "blue",
+    fontWeight: "bold",
   },
 });
 
@@ -155,10 +127,37 @@ const stylesImageScreen = StyleSheet.create({
   },
 });
 
+const faceDetection = StyleSheet.create({
+  buttonContainer: {
+    gap: 10,
+    marginTop: 10,
+  },
+  button: {
+    backgroundColor: "orange",
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: "white",
+    textAlign: "center",
+  },
+  infoText: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "blue",
+  },
+  result: {
+    color: "black",
+    fontSize: 20,
+    fontWeight: "bold",
+    opacity: 0.8,
+  },
+});
+
 export {
   stylesHome,
   stylesCamera,
-  stylesSignIn,
-  stylesSignUp,
+  stylesSignInAndSignUp,
   stylesImageScreen,
+  faceDetection,
 };

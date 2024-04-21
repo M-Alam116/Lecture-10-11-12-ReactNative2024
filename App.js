@@ -5,16 +5,24 @@ import CameraScreen from "./components/cameraScreen";
 import SignUpScreen from "./components/signUpScreen";
 import SignInScreen from "./components/signInScreen";
 import ImageScreen from "./components/imageScreen";
-import ImageClassifier from "./components/objectDetectionScreen";
+import FaceDetector from "./components/objectDetectionScreen";
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
+      <Stack.Navigator screenOptions={{ headerTitleAlign: "center" }}>
+        <Stack.Screen
+          name="SignIn"
+          component={SignInScreen}
+          options={{ title: "Sign In" }}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpScreen}
+          options={{ title: "Sign Up" }}
+        />
         <Stack.Screen
           name="CameraScreen"
           component={CameraScreen}
@@ -26,9 +34,9 @@ const App = () => {
           options={{ title: "Image" }}
         />
         <Stack.Screen
-          name="ImageClassifier"
-          component={ImageClassifier}
-          options={{ title: "Object Detection Classifier" }}
+          name="FaceDetection"
+          component={FaceDetector}
+          options={{ title: "Face Detection" }}
         />
       </Stack.Navigator>
     </NavigationContainer>
